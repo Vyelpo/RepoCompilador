@@ -1,8 +1,20 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
+import sqlite3 as sql
 
-def imprimir(*args):
-    print(user.get() + " " + password.get())
+# Nos conectamos a la base de datos
+connect = sql.connect('baseDeDatos.db')
+cursor = connect.cursor()
+
+def verificarUsuario(*args):
+    cursor.execute("SELECT * FROM usuarios WHERE user_name=? AND user_password=?", (user.get(), password.get())) 
+    resultado = cursor.fetchone()
+
+    if resultado:
+        messagebox.showinfo("Bien", "Inicio de sesión correcto.")
+    else:
+        messagebox.showinfo("Mal", "No se pudo iniciar sesión.")
 
 # Inicializamos la interfaz
 root = Tk()
@@ -27,8 +39,8 @@ password = StringVar()
 password_entry = ttk.Entry(mainframe, width=12, textvariable=password)
 password_entry.grid(column=3, row=2, sticky=(W, E))
 
-# Botón que simula el ingresar las credenciales
-ttk.Button(mainframe, text="Ingresar", command=imprimir).grid(column=3, row=3, sticky=W)
+# Botón para ingresar
+ttk.Button(mainframe, text="Ingresar", command=verificarUsuario).grid(column=3, row=3, sticky=W)
 
 # Espaciado entre los textos y demás objetos dentro de la ventana
 for child in mainframe.winfo_children(): 
