@@ -1,10 +1,13 @@
 - Detectar el nombre de la clase principal o main
-SOL: ?
-- identificar el paquete y/o paquetes del cual proviene
-SOL: ?
-- Eliminar todos los archivos que se generan a la hora de compilar cada codigo
 SOL: 
-    op1: Los directorios son carpetas, asi que si se puede o enviar los archivos an lugar donde consecuentemente se eliminen del programa estaria bien
+    - Pedir al usuario ingresar el script a compilar
+    - Pedir al usuario marcar la clase compilable como "main" o algo predefinido
+    - Buscar una forma de verificar que una clase cualquiera sea siquiera compilable
+    
 
-    op2: Enviar los archivos creados a la carpeta temporal del sistema C:\Users\(user)\Appdata\Roaming\Temp
-    pero si bien se puede hacer esto, entonces podemos enviar esto a una carpeta que se elimine despues una vez finalizada la compilacion
+* EL COMPILADOR DEBE DE ESTAR EN EL MISMO LUGAR QUE EL SCRIPT DE COMPILACION
+
+- Los nombres en "ejecucion = subprocess.run(["java",nombreClase],..)" y en  
+ compilacion = subprocess.run(["javac",nombreClase+".java"],..) varian de cierta forma cuando hay paquetes de por medio en el archivo java cosa que aun no he podido descrifrar aun, una vez hecho esto solo basta con decidir como obtener el nombre de la clase main y volver esto un metodo
+
+ SOL: ?

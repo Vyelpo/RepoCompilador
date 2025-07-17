@@ -1,15 +1,27 @@
-package random;
+
+
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class InterfaceTest extends JFrame {
+public class Interfaz extends JFrame {
 
     private JButton boton;
     private JLabel etiqueta;
 
-    public InterfaceTest() {
+    public static void main(String[] args) {
+        // Ejecutar la ventana en el hilo de eventos
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Interfaz();
+            }
+        });
+    }
+
+    public Interfaz() {
+
         // Configuración de la ventana
         setTitle("Ejemplo de Interfaz Gráfica");
         setSize(300, 200);
@@ -37,13 +49,5 @@ public class InterfaceTest extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        // Ejecutar la ventana en el hilo de eventos
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new InterfaceTest();
-            }
-        });
-    }
+    
 }
