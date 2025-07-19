@@ -4,10 +4,6 @@ SOL:
     - Pedir al usuario marcar la clase compilable como "main" o algo predefinido
     - Buscar una forma de verificar que una clase cualquiera sea siquiera compilable
     
-
-* EL COMPILADOR DEBE DE ESTAR EN EL MISMO LUGAR QUE EL SCRIPT DE COMPILACION
-
-- Los nombres en "ejecucion = subprocess.run(["java",nombreClase],..)" y en  
- compilacion = subprocess.run(["javac",nombreClase+".java"],..) varian de cierta forma cuando hay paquetes de por medio en el archivo java cosa que aun no he podido descrifrar aun, una vez hecho esto solo basta con decidir como obtener el nombre de la clase main y volver esto un metodo
-
- SOL: ?
+- Arreglar los condicionales en caso de que se elija un archivo invalido
+SOL: 
+    if, else, la basica pero que permita abrir otra vez el explorador de archivos
