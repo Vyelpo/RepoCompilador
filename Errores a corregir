@@ -1,9 +1,0 @@
-- Detectar el nombre de la clase principal o main
-SOL: 
-    - Pedir al usuario ingresar el script a compilar
-    - Pedir al usuario marcar la clase compilable como "main" o algo predefinido
-    - Buscar una forma de verificar que una clase cualquiera sea siquiera compilable
-    
-- Arreglar los condicionales en caso de que se elija un archivo invalido
-SOL: 
-    if, else, la basica pero que permita abrir otra vez el explorador de archivos
